@@ -26,11 +26,5 @@ client
   //   "//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]"
   // )
 
-  // .touchAction([
-  //   { action: "press", x: 200, y: 50 },
-  //   { action: "moveTo", x: 0, y: 200 },
-  //   "release"
-  // ])
-
   .pause(2000)
   .end();
