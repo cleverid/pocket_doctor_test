@@ -4,10 +4,9 @@ const opts = {
   port: 4723,
   desiredCapabilities: {
     platformName: "Android",
-    platformVersion: "8.0",
+    platformVersion: "8.1",
     deviceName: "Android Emulator",
-    app:
-      "/Users/eugen/Projects/PocketDoctorUniversal/android/app/build/outputs/apk/release/app-release.apk",
+    app: process.cwd() + "/app-release.apk",
     automationName: "UiAutomator"
   }
 };
