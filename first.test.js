@@ -13,17 +13,24 @@ const opts = {
 
 const client = wdio.remote(opts);
 
-client
-  .init()
-  .pause(2000)
+(async () => {
+  await client.init().waitForVisible("~Settings", 3000, false);
+  console.log(await client.getElementSize("~Settings"));
 
-  //.click('//*[@text="Settings"]')
+  await client
 
-  .click("~Article 1")
+    //.click('//*[@text="Settings"]')
+    // .touchAction(["press", { action: "moveTo", x: 0, y: 200 }, "release"])
+    // .touchScroll("~Article 1", 0, 300)
+    .click("~Article 1")
 
-  // .click(
-  //   "//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]"
-  // )
+    // .click(
+    //   "//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]"
+    // )
 
-  .pause(2000)
-  .end();
+    .pause(2000)
+    .end()
+    .catch(e => {
+      console.log(e);
+    });
+})();

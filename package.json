@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webdriverio": "^4.13.2"
+    "source-map-support": "^0.5.9",
+    "webdriverio": "^4.13.0"
   }
 }
