@@ -16,6 +16,14 @@ const client = wdio.remote(opts);
 (async () => {
   await client.init().waitForVisible("~Settings", 3000, false);
   console.log(await client.getElementSize("~Settings"));
+  // await client.touchScroll("~Article 42");
+  // await client.touchAction("~Article 1", [
+  //   "press",
+  //   { action: "moveTo", x: 50, y: 100 },
+  //   "release"
+  // ]);
+
+  await client.swipe("~Article 1", 10, 0, 2);
 
   await client
 
