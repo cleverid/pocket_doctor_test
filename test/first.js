@@ -1,32 +1,15 @@
-const wdio = require("webdriverio");
-const scrollUntill = require("../utils/scroll-untill");
+const AndroidFreeRusInit = require("../config/app-init").AndroidFreeRusInit;
 
-const opts = {
-  port: 4723,
-  desiredCapabilities: {
-    platformName: "Android",
-    platformVersion: "8.1",
-    deviceName: "Android Emulator",
-    app: process.cwd() + "/app-release.apk",
-    automationName: "UiAutomator"
-  }
-};
+client = AndroidFreeRusInit();
 
-const client = wdio.remote(opts);
-
-describe("Платные статьи", () => {
-  it("test", async () => {
-    await client.init().waitForVisible("~Settings", 6000, false);
-    await scrollUntill(client, "~Article 21");
-
-    await client
-      .click("~Article 21")
-      .pause(2000)
-      .end()
-      .catch(e => {
-        console.log(e);
-      });
-
-    return true;
+describe("Переход по ссылкам", () => {
+  beforeEach(() => {
+    return client.init();
   });
+
+  afterEach(() => {
+    return client.end();
+  });
+
+  it("test", async () => {});
 });
