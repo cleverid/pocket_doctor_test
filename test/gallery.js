@@ -2,7 +2,7 @@ const AndroidFreeRusInit = require("../config/app-init").AndroidFreeRusInit;
 
 client = AndroidFreeRusInit();
 
-describe("Переход по ссылкам", () => {
+describe("Переход по изображениям", () => {
   beforeEach(() => {
     return client.init();
   });
@@ -11,5 +11,5 @@ describe("Переход по ссылкам", () => {
     return client.end();
   });
 
-  it("test", async () => {});
+  it.only("test", async () => {});
 });
