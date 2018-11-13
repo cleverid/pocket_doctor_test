@@ -11,5 +11,7 @@ describe("Переход по изображениям", () => {
     return client.end();
   });
 
-  it.only("test", async () => {});
+  it("test", async () => {
+    // Место для подвига
+  });
 });
